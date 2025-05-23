@@ -81,10 +81,10 @@ jobs:
         with:
           submodules: recursive
       - name: Install dependencies
-        run: brew install sdl2 libpng glew ninja cmake libzip nlohmann-json tinyxml2 spdlog vorbis-tools
+        run: brew install sdl2 libpng glew ninja cmake libzip nlohmann-json tinyxml2 spdlog vorbis-tools libogg libvorbis
       - name: Build
         run: |
-          cmake -H. -Bbuild-cmake -GNinja -DCMAKE_BUILD_TYPE=Release
+          cmake -H. -Bbuild-cmake -GNinja -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release
           cmake --build build-cmake --config Release -j3
       - name: Download starship.o2r
         uses: actions/download-artifact@v4
