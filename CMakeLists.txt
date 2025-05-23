@@ -22,6 +22,7 @@ set(PROJECT_TEAM "github.com/harbourmasters" CACHE STRING "" FORCE)
 
 if(APPLE)
   enable_language(OBJCXX)
+  set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build static libraries" FORCE)
 endif()
 
 # Set the minimum version of CMake and the deployment target for macOS
