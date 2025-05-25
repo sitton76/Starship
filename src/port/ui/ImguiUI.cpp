@@ -323,6 +323,9 @@ void DrawSettingsMenu(){
                         if (GameEngine::GenAssetFile()){
                             GameEngine::ShowMessage("Success", "Audio assets installed. Changes will be applied on the next startup.", SDL_MESSAGEBOX_INFORMATION);
                             Ship::Context::GetInstance()->GetWindow()->Close();
+                        } else {
+                            GameEngine::ShowMessage("Failure", "No ROM selected, exiting game...", SDL_MESSAGEBOX_INFORMATION);
+                            Ship::Context::GetInstance()->GetWindow()->Close();
                         }
                     }
                 }
